@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const BarnaclesMavin = require('../lib/barnaclesmavin.js');
+
+
+let barnaclesMavin = new BarnaclesMavin({ printErrors: true });
+
+
+console.log('barnacles-mavin instantiation test');
