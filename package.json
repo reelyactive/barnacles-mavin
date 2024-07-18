@@ -18,7 +18,8 @@
   },
   "main": "./lib/barnaclesmavin.js",
   "scripts": {
-    "start": "node bin/barnacles-mavin"
+    "start": "node bin/barnacles-mavin",
+    "simulator": "node bin/barnacles-mavin-simulator"
   },
   "repository": {
     "type": "git",

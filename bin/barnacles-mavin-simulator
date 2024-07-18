@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+const BarnaclesMavin = require('../lib/barnaclesmavin.js');
+
+const INTERVAL_MILLISECONDS = 5000;
+
+
+let barnaclesMavin = new BarnaclesMavin({ printErrors: true });
+
+setInterval(generateDynamb, INTERVAL_MILLISECONDS);
+
+console.log('barnacles-mavin with simulated data every', INTERVAL_MILLISECONDS,
+            'ms');
+
+
+function generateDynamb() {
+  let dynamb = {
+    deviceId: "fee150bada55",
+    deviceIdType: 3,
+    isContactDetected: (Math.random() < 0.1) ? false : true,
+    isMotionDetected: (Math.random() < 0.1) ? true : false,
+    timestamp: Date.now()
+  };
+
+  barnaclesMavin.handleEvent('dynamb', dynamb);
+}
+
+
